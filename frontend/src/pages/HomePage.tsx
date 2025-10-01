@@ -12,11 +12,6 @@ export default function HomePage(): JSX.Element {
     const [fileError, setFileError] = useState<string | null>(null);
     const [file, setFile] = useState<File | null>(null);
 
-
-    const handleAudioTranscription = () => {
-
-    }
-
     const handleGetStarted = () => {
         signInUser();
     }

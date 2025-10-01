@@ -34,8 +34,16 @@ export function AuthProvider({ children }) {
     }
 
     const signOutUser = async () => {
-        await puter.auth.signOut();
-        setUser(null);
+        try {
+            setLoading(true);
+            await puter.auth.signOut();
+            setUser(null);
+            setError(null);
+        } catch (e) {
+            setError(String(e));
+        } finally {
+            setLoading(false);
+        }
     }
 
 
