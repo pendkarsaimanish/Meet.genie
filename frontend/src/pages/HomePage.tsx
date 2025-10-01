@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router"
 import { useState, type JSX } from "react";
 import { PuffLoader } from "react-spinners";
 import { useAuth } from "@/context/AuthContext";
@@ -6,8 +5,8 @@ import { Button } from "@/components/ui/button";
 import AudioInputForm from "@/components/AudioInputForm";
 
 export default function HomePage(): JSX.Element {
-    const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
-    const navigate = useNavigate();
+    // const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+    // const navigate = useNavigate();
     const { user, loading, signInUser } = useAuth();
     const [fileError, setFileError] = useState<string | null>(null);
     const [file, setFile] = useState<File | null>(null);
