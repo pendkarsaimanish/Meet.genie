@@ -1,14 +1,14 @@
-[
-    {
-        "content": {
-            "parts": [
-                {
-                    "text": "{\n  \"summary\": \"The RM of Springfield Council met on September 2, 2025, at 6:00 p.m., with Mayor Patrick Tarian presiding. The meeting began with a land acknowledgment and the unanimous approval of the agenda, which included an added new business item for a discharge pump replacement. The minutes from August 19th were also adopted. During reports, Mayor Tarian addressed a missing report, promising it for the next meeting, and discussed an Auditor General investigation regarding past fund allocation, emphasizing it was an administrative matter. Departmental reports were also approved. Council unanimously passed the second and third readings of Bylaw 25-13, pertaining to restrictions on property access via municipal roads. The consent agenda was approved without opposition. New business items included the unanimous approval to apply for Federation of Canadian Municipalities (FCM) funding for a climate adaptation plan, and the approval of the July 2025 financial statement, although Councillor Kazinsky requested more details on a $2 million increase in recreation and culture services expenses. The council also appointed members for the 2026 Board of Revision and authorized 2026 supplemental taxes. A new social media moderation procedure was accepted after a discussion regarding its scope, the handling of inappropriate comments, and the need for public and council awareness of its underlying policy. Finally, an emergency purchase of a submersible discharge pump for $87,600 plus related costs was authorized for the Main Street LDS Lift Station due to immediate need. The meeting adjourned at 6:25 p.m.\",\n  \"action_items\": [\n    {\n      \"task\": \"Provide August and September reports.\",\n      \"responsible\": \"Mayor Patrick Tarian\",\n      \"deadline\": \"Next council meeting\"\n    },\n    {\n      \"task\": \"Provide details on the $2 million increase in recreation and culture services expenses from the July 2025 financial statement.\",\n      \"responsible\": \"CAO\",\n      \"deadline\": \"Not specified\"\n    },\n    {\n      \"task\": \"Review and discuss Mr. Geesbrecht's and other potential resident concerns regarding the social media moderation procedure with the Communications Coordinator.\",\n      \"responsible\": \"CAO/Communications Coordinator\",\n      \"deadline\": \"Not specified\"\n    },\n    {\n      \"task\": \"Investigate incorporating a stipulation regarding anonymous comments into the social media moderation guidelines.\",\n      \"responsible\": \"Staff (CAO/Communications Coordinator)\",\n      \"deadline\": \"Not specified\"\n    },\n    {\n      \"task\": \"Provide Councillor Kazinsky with the date when the social media policy was approved by council.\",\n      \"responsible\": \"Staff (CAO)\",\n      \"deadline\": \"Not specified\"\n    }\n  ]\n}"
-                }
-            ],
-            "role": "model"
+{
+    "type": "meeting",
+    "summary": "The team discussed product roadmap, design challenges, and next sprint goals.",
+    "action_items": [
+        {
+            "task": "Finalize UI mockups",
+            "deadline": "2025-10-05"
         },
-        "finishReason": "STOP",
-        "index": 0
-    }
-]
+        {
+            "task": "Schedule client demo",
+            "deadline": null
+        }
+    ]
+}

@@ -4,12 +4,12 @@ import SummaryPage from "./pages/SummaryPage";
 
 function App() {
   return (
-    <div>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/summary" element={<SummaryPage />} />
-      </Routes>
-    </div>
+    // <div className="">
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/summary" element={<SummaryPage />} />
+    </Routes>
+    // </div>
   )
 }
 
