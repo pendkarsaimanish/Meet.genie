@@ -2,7 +2,7 @@ import Card from "@mui/joy/Card";
 import CardContent from "@mui/joy/CardContent";
 import { Button } from "./ui/button";
 
-export default function AudioInputForm({ file, fileError, handleSubmit, handleFileChange, user }: AudioInputFileProps) {
+export default function AudioInputForm({ file, fileError, handleSubmit, handleFileChange }: AudioInputFileProps) {
     return (
         <form className="mt-10 flex flex-col gap-2" onSubmit={handleSubmit}>
             <p className='font-semibold text-lg font-[Outfit] flex items-center gap-2 justify-center'>Uplaod the audio file <span className="text-sm flex items-center justify-center">{"(<20MB)"}</span></p>

@@ -6,11 +6,16 @@ import { Button } from "@/components/ui/button";
 import AudioInputForm from "@/components/AudioInputForm";
 
 export default function HomePage(): JSX.Element {
+    const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
     const navigate = useNavigate();
-
     const { user, loading, signInUser } = useAuth();
     const [fileError, setFileError] = useState<string | null>(null);
     const [file, setFile] = useState<File | null>(null);
+
+
+    const handleAudioTranscription = () => {
+
+    }
 
     const handleGetStarted = () => {
         signInUser();
@@ -20,6 +25,7 @@ export default function HomePage(): JSX.Element {
         e.preventDefault();
         if (file) {
             console.log(file.name, file.size)
+
             // navigate("/summary");
         }
     }
@@ -80,7 +86,6 @@ export default function HomePage(): JSX.Element {
                             <PuffLoader size={24} color="#fff" />
                         </div>
                     }
-
                     Get Started
                 </Button>
             }
@@ -88,3 +93,9 @@ export default function HomePage(): JSX.Element {
         </div >
     )
 }
+
+
+{/* <div className="flex justify-center gap-6 mt-8 items-center">
+    <p className="font-semibold text-lg font-[Outfit] h-full flex justify-center items-center">{user.username}</p>
+    <Button>Sign out</Button>
+</div> */}
