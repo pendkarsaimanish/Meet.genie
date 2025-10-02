@@ -75,7 +75,7 @@ interface ChatOptions {
 }
 
 interface PuterAI {
-    chat(prompt: string | ChatMessage[], options?: ChatOptions, testMode: boolean): Promise<any>
+    chat(prompt: string | ChatMessage[], options?: ChatOptions, testMode?: boolean): Promise<any>
 }
 
 declare global {
