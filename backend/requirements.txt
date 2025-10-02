@@ -1,8 +1,0 @@
-fastapi
-uvicorn[standard]
-openai
-faster-whisper
-transformers
-torch
-pymongo   # if you plan to use MongoDB
-python-multipart
