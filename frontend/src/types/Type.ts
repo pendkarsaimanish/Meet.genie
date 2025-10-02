@@ -30,6 +30,18 @@ declare global {
         transcribe: (file: File) => Promise<void> | null;
     }
 
+    interface Summaryreponse {
+        "type": "meeting" | "non_meeting",
+        "summary": string,
+        "action_items": [
+            {
+                "task": string,
+                "deadline": string
+            }
+        ] | null,
+        "description": string | null
+    }
+
 }
 
 export { }

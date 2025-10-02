@@ -6,9 +6,6 @@ export const useSummarizer = () => {
     const [summaryError, setSummaryError] = useState<string | null>(null);
 
     const summarize = async (transcription: string) => {
-
-        console.log(transcription);
-
         setIsSummarizing(true)
         setSummary(null)
         setSummaryError(null)
@@ -49,7 +46,6 @@ export const useSummarizer = () => {
                 },
             );
 
-            console.log(summary);
             setSummary(summary?.message?.content);
 
         } catch (err: any) {
