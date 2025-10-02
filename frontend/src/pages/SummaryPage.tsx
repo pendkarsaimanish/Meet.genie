@@ -1,41 +1,21 @@
-import { Button } from '@/components/ui/button';
-import CardContent from '@mui/joy/CardContent';
-import data from "../data/response.json"
-import Tooltip from '@mui/joy/Tooltip';
-import Table from '@mui/joy/Table';
-import { type JSX } from 'react';
 import Chip from '@mui/joy/Chip';
-import Card from '@mui/joy/Card';
+import { type JSX } from 'react';
+import Table from '@mui/joy/Table';
+import Tooltip from '@mui/joy/Tooltip';
+import data from "../data/response.json"
+import { useLocation } from 'react-router';
 
 
 export default function SummaryPage(): JSX.Element {
+
+
+    const { transcription, summary } = useLocation().state;
+
+    console.log({ transcription, summary });
+
     return (
         <div className='flex flex-col items-center p-4 select-none'>
-            <div className='flex justify-center'>
-                <p className='font-semibold text-lg font-[Outfit]'>Uplaod the audio file</p>
-            </div>
-
-            {/* Input File  */}
-            <div className='flex justify-center mt-2'>
-                <div className='border-2 rounded-lg border-dashed'>
-                    <Card variant='soft' sx={{ border: "1px", borderColor: "#000000" }}>
-                        <CardContent>
-                            <div className='flex flex-wrap gap-4'>
-                                <input
-                                    id="resume-file"
-                                    className={`block text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-black file:text-white hover:file:bg-[#000000ca] cursor-pointer `}
-                                    type="file"
-                                    accept=".mp3,.wav,.m4a,.ogg,.flac"
-                                />
-                                <Button>Submit</Button>
-                            </div>
-                        </CardContent>
-                    </Card>
-                </div>
-            </div>
-
-            {/*  */}
-            <div className='mt-10'>
+            <div className=''>
                 <p className='font-semibold text-2xl font-[Outfit]'>Summary</p>
                 <div className='mt-1'>
                     <p className='font-[Inter] text-sm select-all'>{data.summary}</p>

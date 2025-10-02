@@ -1,15 +1,31 @@
-import { useState, type JSX } from "react";
+import { useNavigate } from "react-router";
 import { PuffLoader } from "react-spinners";
-import { useAuth } from "@/context/AuthContext";
 import { Button } from "@/components/ui/button";
+import { useAuth } from "@/context/AuthContext";
+import { useEffect, useState, type JSX } from "react";
 import AudioInputForm from "@/components/AudioInputForm";
+import { useAudioTranscriber } from "@/hooks/useAudioTranscriber";
+import { useSummarizer } from "@/hooks/useSummarizer";
 
 export default function HomePage(): JSX.Element {
-    // const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
     const { user, loading, signInUser } = useAuth();
-    const [fileError, setFileError] = useState<string | null>(null);
+    const { summarize, summary, isSummarizing, summaryError } = useSummarizer();
     const [file, setFile] = useState<File | null>(null);
+    const [fileError, setFileError] = useState<string | null>(null);
+    const { transcribe, isTranscribing, transcription } = useAudioTranscriber();
+
+    useEffect(() => {
+        if (transcription) {
+            summarize(transcription);
+        }
+    }, [transcription])
+
+    useEffect(() => {
+        if (transcription && summary) {
+            navigate("/summary", { state: { transcription: transcription, summary: summary } });
+        }
+    }, [transcription, summary, navigate])
 
     const handleGetStarted = () => {
         signInUser();
@@ -18,9 +34,7 @@ export default function HomePage(): JSX.Element {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (file) {
-            console.log(file.name, file.size)
-
-            // navigate("/summary");
+            transcribe(file);
         }
     }
 
@@ -72,7 +86,7 @@ export default function HomePage(): JSX.Element {
             </p>
             {(user && !loading)
                 ?
-                <AudioInputForm file={file} fileError={fileError} handleSubmit={handleSubmit} handleFileChange={handleFileChange} user={user} />
+                <AudioInputForm file={file} fileError={fileError} handleSubmit={handleSubmit} handleFileChange={handleFileChange} user={user} isTranscribing={isTranscribing} isSummarizing={isSummarizing} />
                 :
                 <Button className="mt-4 flex" onClick={handleGetStarted}>
                     {loading &&
@@ -87,9 +101,3 @@ export default function HomePage(): JSX.Element {
         </div >
     )
 }
-
-
-{/* <div className="flex justify-center gap-6 mt-8 items-center">
-    <p className="font-semibold text-lg font-[Outfit] h-full flex justify-center items-center">{user.username}</p>
-    <Button>Sign out</Button>
-</div> */}

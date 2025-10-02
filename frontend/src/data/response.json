@@ -1,14 +1,22 @@
 {
     "type": "meeting",
-    "summary": "The team discussed product roadmap, design challenges, and next sprint goals.",
+    "summary": "The RM of Springfield held a regular council meeting on September 2nd, 2025. Discussions included approval of the agenda, minutes, and reports; readings and approvals of bylaws; consent agenda items; new business such as applying for climate adaptation funding, approving financial statements, and setting up a Board of Revision; assessment changes and supplemental taxes; social media moderation policies; and an emergency purchase authorization for a discharge pump replacement. The meeting concluded with an adjournment at 6:25 p.m.",
     "action_items": [
         {
-            "task": "Finalize UI mockups",
-            "deadline": "2025-10-05"
+            "task": "Add September and October reports to the next council meeting",
+            "deadline": "2025-10-07"
         },
         {
-            "task": "Schedule client demo",
-            "deadline": null
+            "task": "Provide council with the existing social media policy document",
+            "deadline": "2025-09-05"
+        },
+        {
+            "task": "Follow up on the specific concerns raised by resident Mr. Giesbrecht regarding social media",
+            "deadline": "2025-09-12"
+        },
+        {
+            "task": "Confirmation of the date when the social media policy was approved by council",
+            "deadline": "2025-09-10"
         }
     ]
 }

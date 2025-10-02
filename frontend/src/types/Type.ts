@@ -14,11 +14,20 @@ declare global {
     }
 
     type AudioInputFileProps = {
+        user: User,
         file: File | null,
+        isTranscribing: boolean,
+        isSummarizing: boolean,
         fileError: string | null,
         handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void,
         handleFileChange: (event: React.ChangeEvent<HTMLInputElement>) => void,
-        user: User
+    }
+
+    type AudioTranscriptionProps = {
+        error: string | null,
+        isTranscribing: boolean,
+        transcription: string | null,
+        transcribe: (file: File) => Promise<void> | null;
     }
 
 }
