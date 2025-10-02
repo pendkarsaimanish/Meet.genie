@@ -47,9 +47,9 @@ export default function SummaryPage(): JSX.Element {
                     <SummaryMeetingType data={sdata} />
 
                     {/* Action Items */}
-                    {(!sdata?.action_items) &&
-                        <SummaryActionItems tableData={sdata} />
-                    }
+                    {sdata && Array.isArray(sdata.action_items) && sdata.action_items.length > 0 && (
+  <SummaryActionItems tableData={sdata} />
+)}
                 </div>
             </div>
 
