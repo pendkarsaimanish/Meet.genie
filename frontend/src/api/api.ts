@@ -3,7 +3,7 @@ import axios from "axios";
 
 
 const apiClient = axios.create({
-    baseURL: import.meta.env.VITE_BASE_API_URL || 'https://n8n-f1lu.onrender.com'
+    baseURL: import.meta.env.BASE_API_URL
 });
 
 
@@ -12,7 +12,7 @@ export const parseAudioTranscriptAPI = async (file: File) => {
     formData.append('audio', file);
 
     try {
-        const response = await apiClient.post(import.meta.env.VITE_PARSE_AUDIO_TRANSCRIPT_ENDPOINT, formData)
+        const response = await apiClient.post(import.meta.env.PARSE_AUDIO_TRANSCRIPT_ENDPOINT, formData)
         return response.data;
     } catch (error) {
         console.log('Axios error during transcription:', error);
