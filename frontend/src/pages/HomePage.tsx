@@ -10,7 +10,7 @@ import { useSummarizer } from "@/hooks/useSummarizer";
 export default function HomePage(): JSX.Element {
     const navigate = useNavigate();
     const { user, loading, signInUser } = useAuth();
-    const { summarize, summary, isSummarizing, summaryError } = useSummarizer();
+    const { summarize, summary, isSummarizing } = useSummarizer();
     const [file, setFile] = useState<File | null>(null);
     const [fileError, setFileError] = useState<string | null>(null);
     const { transcribe, isTranscribing, transcription } = useAudioTranscriber();
